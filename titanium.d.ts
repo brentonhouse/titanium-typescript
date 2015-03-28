@@ -5578,14 +5578,14 @@ declare module Titanium {
 		export function getApplicationSupportDirectory () : string;
 		export function getBubbleParent () : boolean;
 		export function getExternalStorageDirectory () : string;
-		export function getFile (path: string, ...extraPaths: string) : Titanium.Filesystem.File;
+		export function getFile (path: string, ...extraPaths: string[]) : Titanium.Filesystem.File;
 		export function getLineEnding () : string;
 		export function getResRawDirectory () : string;
 		export function getResourcesDirectory () : string;
 		export function getSeparator () : string;
 		export function getTempDirectory () : string;
 		export function isExternalStoragePresent () : boolean;
-		export function openStream (mode: number, path: string, ...extraPaths: string) : Titanium.Filesystem.FileStream;
+		export function openStream (mode: number, path: string, ...extraPaths: string[]) : Titanium.Filesystem.FileStream;
 		export function removeEventListener (name: string, callback: (...args : any[]) => any) : void;
 		export function setBubbleParent (bubbleParent: boolean) : void;
 		export interface File extends Titanium.Proxy {
