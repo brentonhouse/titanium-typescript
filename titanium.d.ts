@@ -469,7 +469,7 @@ declare module Titanium {
 			}
 			export interface DocumentViewer extends Titanium.UI.View {
 				setUrl (url: string) : void;
-				show (animated: boolean, view: any) : void;
+				show () : void;
 			}
 			export interface Popover extends Titanium.Proxy {
 				arrowDirection : number;
@@ -3875,7 +3875,7 @@ declare module Titanium {
 			export function getLaunchIntent () : Titanium.Android.Intent;
 			export function removeEventListener (name: string, callback: (...args : any[]) => any) : void;
 			export function setBubbleParent (bubbleParent: boolean) : void;
-			export enum R {
+			export interface R {
 
 			}
 		}
@@ -6336,8 +6336,10 @@ declare class ErrorCallbackArgs  {
 	socket : Titanium.Network.Socket.TCP;
 }
 
-declare enum FailureResponse {
-
+declare class FailureResponse {
+	code: Number; 
+	error: string; 
+	success: boolean;
 }
 
 declare class WriteCallbackArgs extends ErrorResponse {
