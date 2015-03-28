@@ -17,9 +17,8 @@ module Generator {
 		optional : boolean;
 	}
 
-	interface TiReturnType {
-		type : any;
-	}
+	// FIXME remove any
+	type TiReturnType = any;
 
 	interface TiMethod {
 		parameters : Array<TiParameter>;
