@@ -38,6 +38,7 @@ The above command line generates the file Generator.js. To generate the _Titaniu
 
 *	In `Titanium.Map.View` there is a conflict with the property `animate` and two methods with the same id. The property `animate` has been taken out from the definition.
 *	In `Database.ResultSet` the property `fieldCount` has been removed. Instead you can use the method `getFieldCount()`.
+*   Methods that accept an arbitrary number arguments are not detected as such because Appcelerator's `api.json` does not appear to contain this information.
 
 # Future work
 
