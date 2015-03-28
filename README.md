@@ -1,6 +1,6 @@
 # Titanium Typescript
 
-Ambient declarations for the **Titanium Appcelerator API v3.1.3.GA**.
+Ambient declarations for the **Titanium Appcelerator API v3.5.0**.
 
 	var ROWS: number = 10;
 	var children: Array<Titanium.UI.View> = button.getChildren();
@@ -23,6 +23,8 @@ Ambient declarations for the **Titanium Appcelerator API v3.1.3.GA**.
 	tableView.data = dataSource;
 
 # Build
+
+Obtain an `api.json` file from [here](http://docs.appcelerator.com/titanium/data/index.html)
 
 To build the project:
 
