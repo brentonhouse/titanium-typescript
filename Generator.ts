@@ -10,6 +10,8 @@ import fs = require('fs');
 import _  = require('underscore');
 import _s = require('underscore.string')
 
+require('./Util');
+
 module Generator {
 	interface TiParameter {
 		name     : string;
