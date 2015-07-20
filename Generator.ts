@@ -20,7 +20,11 @@ module Generator {
 	}
 
 	// FIXME remove any
-	type TiReturnType = any;
+	 type TiReturnType = any;
+	
+	//interface TiReturnType {
+	//	type : any;
+	//}
 
 	interface TiMethod {
 		parameters : Array<TiParameter>;
@@ -497,8 +501,16 @@ module Generator {
 				_.each (tiReturnType, (returnType: TypeField) => {
 					returnTypes.push (Mapper.SanitizeModuleRoute(Mapper.ComputeType (returnType.type)));
 				});
-			} else {
+			} 
+			else if (_.isArray (tiReturnType.type)) {
+				_.each (tiReturnType.type, (returnType: string) => {
+					returnTypes.push (Mapper.SanitizeModuleRoute(Mapper.ComputeType (returnType)));
+				});
+			} 
+			else if (_.isString(tiReturnType.type)) {
 				returnTypes.push (Mapper.SanitizeModuleRoute(Mapper.ComputeType (tiReturnType.type)));
+			} else {
+				returnTypes.push (Mapper.SanitizeModuleRoute(Mapper.ComputeType ('void')));
 			}
 			return returnTypes;
 		}

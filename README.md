@@ -1,6 +1,6 @@
 # Titanium Typescript
 
-Ambient declarations for the **Titanium Appcelerator API v3.5.0**.
+Ambient declarations for the **Titanium Appcelerator API v4.1.0**.
 
 	var ROWS: number = 10;
 	var children: Array<Titanium.UI.View> = button.getChildren();
