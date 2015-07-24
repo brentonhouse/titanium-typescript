@@ -311,7 +311,7 @@ module Generator {
 					console.error ('Error opening file \'' + path + '\'');
 				} else {
 					_.templateSettings.interpolate = /\{\{(.+?)\}\}/g;
-					try {
+					//try {
 						var json = JSON.parse(data.toString('utf-8'));
 						_.each (json, (tiObject : TiObject) => {
 							Mapper.ComputeTiObject (tiObject);
@@ -319,9 +319,9 @@ module Generator {
 						_.each (Mapper.RootModule.Modules, (m: Module) => {
 							console.log (m.Render ());
 						});
-					} catch (invalidJson) {
-						console.error (invalidJson);
-					}
+					//} catch (invalidJson) {
+					//	console.error (invalidJson);
+					//}
 				}
 			});
 		}
@@ -370,6 +370,7 @@ module Generator {
 				var moduleObj = Mapper.GetModuleByNameFromModule (moduleName, rootModule);
 				if (_.isNull(moduleObj)) {
 					moduleObj = new Module (moduleName);
+						moduleObj.Methods = _.uniq(moduleObj.Methods);
 					rootModule.Modules.push (moduleObj);
 				}
 				rootModule = moduleObj;
@@ -492,9 +493,9 @@ module Generator {
 		}
 
 		/// <b>ComputeMethodReturnTypes</b>
-		/// @brief Returns a list with all the posible return types.
+		/// @brief Returns a list with all the possible return types.
 		/// @param[in] tiReturnType can be an array or just a simple JSON object.
-		/// @return a list with all the posible return types.
+		/// @return a list with all the possible return types.
 		private static ComputeMethodReturnTypes (tiReturnType: TiReturnType) : Array<string> {
 			var returnTypes : Array<string> = [];
 			if (_.isArray (tiReturnType)) {
