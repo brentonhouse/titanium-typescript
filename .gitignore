@@ -2,3 +2,4 @@ node_modules/
 api.json
 *.js
 *.js.map
+alloy_api.json
