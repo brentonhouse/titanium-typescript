@@ -1,3 +1,4 @@
+import Ti = Titanium;
 declare module Titanium {
 	export var bubbleParent : boolean;
 	export var apiName : string;
